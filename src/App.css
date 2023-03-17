@@ -129,8 +129,8 @@ form .names input{
 }
 .upload-property-section{
   display: grid;
-  grid-template-columns: 1fr ;
-  place-items: center;
+  grid-template-columns: 1fr 1fr;
+  /* place-items: center; */
   /* gap: 1em; */
 }
 .show{

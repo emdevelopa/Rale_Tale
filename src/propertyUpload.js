@@ -11,8 +11,11 @@ const PropUpload = () => {
     const [propertyPurpose, setPropertyPurpose] = useState("Select the property type");
     const [propertyType, setPropertyType] = useState("Select the property type");
     const [landType, setLandType] = useState("")
-    const [facilities, setFacilities] = useState("")
+    const [petsAllowed, setPetsAllowed] = useState("")
     const [errMsg, setErrMsg] = useState("");
+    useEffect(()=>{
+        console.log(petsAllowed);
+    },[petsAllowed])
     useEffect(() => {
         console.log(propertyPurpose);
     }, [propertyPurpose])
@@ -225,7 +228,7 @@ const PropUpload = () => {
 
                             </div>
 
-                            <select className="propertyPurpose">
+                            {/* <select className="propertyPurpose">
                                 <option>Number of Bathroom?</option>
                                 <option>1</option>
                                 <option>2</option>
@@ -244,7 +247,7 @@ const PropUpload = () => {
                                 <option>5</option>
                                 <option>6</option>
                                 <option>others</option>
-                            </select>
+                            </select> */}
                             
                             <input type="text" placeholder="State" />
                             <input type="text" placeholder="Local Government Area" />
@@ -258,6 +261,21 @@ const PropUpload = () => {
                                 <input type="text" placeholder="To" />
                             </div>
 
+                        </div>
+                        <div>
+                            <h1>Extras</h1>
+                            <div>
+                                <label>Pets</label>
+                                <input type="radio"value="Yes" name="petQuerry" onClick={(e)=>{
+                                    setPetsAllowed(e.target.value);
+                                }}/>
+                                <input type="radio"value="no" name="petQuerry" onClick={(e)=>{
+                                    setPetsAllowed(e.target.value);
+                                }}/>       
+                            </div>
+                            <div>
+                                <input type="text" placeholder=""/>
+                            </div>
                         </div>
                     </div>
                     <br />
